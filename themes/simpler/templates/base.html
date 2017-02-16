@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="googlebot" content="noindex, nofollow">
+        <meta name="description" content="www root">
+        <meta name="author" content="T.B.">
+
+        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/node_modules/normalize.css/normalize.css">
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" rel="stylesheet">
+
+        <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <footer>
+                &copy; [2010, &infin;)
+            </footer>
+        </div>
+    </body>
+</html>
