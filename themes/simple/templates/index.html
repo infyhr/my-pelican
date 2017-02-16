@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="intro">
+    <h4>Hi</h4>
+    <p>
+        I really have no clue how you ended up here since this is my <code>www</code> root!<br>
+        However, since you're already here it'd be such a shame if you'd leave right away! So please, do have a look around.
+    </p>
+</div>
+<div class="free">&nbsp;</div>
+<h4>Articles</h4>
+<section id="content">
+    {% block content_title %}
+    {% endblock content_title %}
+
+    <div id="row">
+    {% for article in articles_page.object_list %}
+        <div class="col-xs-3 col-sm-2 col-md-2 col-lg-1 col-xl-1 date np">{{ article.date.strftime('%b %d') }}</div>
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-11 col-xl-11 np"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></div>
+    {% endfor %}
+    </div>
+
+    {% if articles_page.has_other_pages() %}
+        {% include 'pagination.html' %}
+    {% endif %}
+</section><!-- /#content -->
+
+<div class="intro">
+    <div class="free">&nbsp;</div>
+    <h4>Pages</h4>
+    <p>
+        TBA
+    </p>
+    <div class="free">&nbsp;</div>
+    <h4>Password protected content</h4>
+    <p>Some of the content on here may be sensitive, so it's encrypted from everyone's eyes. There are a number of private GitHub repositories as well.<br>
+    If you need access, ping me on <a href="https://darkscience.net">IRC</a> | <a href="#" onclick="javascript:alert('If you are reading this, I'm quite sure you already possess my personal information :)')">Facebook</a> | <a href="mailto:infy@cybershade.org">E-Mail</a>...<br>
+    </p>
+    <div class="free">&nbsp;</div>
+    <h4>Links</h4>
+    <ul>
+        <li><a href="https://cybershade.org">Cybershade</a></li>
+        <li><a href="https://darkscience.net">Darkscience</a></li>
+        <li><a href="https://darchoods.net">Darchoods</a></li>
+        <li><a href="https://carnet.hr">CARNet</a></li>
+    </ul>
+</div>
+
+{% endblock content %}

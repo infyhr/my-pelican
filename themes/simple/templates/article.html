@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title|striptags }}{% endblock %}
+{% block head %}
+  {{ super() }}
+  {% if article.description %}
+    <meta name="description" content="{{article.description}}" />
+  {% endif %}
+
+  {% for tag in article.tags %}
+    <meta name="tags" content="{{tag}}" />
+  {% endfor %}
+
+{% endblock %}
+
+{% block content %}
+<section id="content" class="intro">
+    <div class="entry-info">
+        <h4 class="entry-title">{{ article.title }}</h4>
+         {% import 'translations.html' as translations with context %}
+         {{ translations.translations_for(article) }}
+        <div class="time" datetime="{{ article.date.isoformat() }}">
+            <span>{{ article.locale_date }}，～{{ article.stats['read_mins'] }} minute read</span>
+        </div>
+    </div>
+  <div class="entry-content">
+    {{ article.content }}
+  </div><!-- /.entry-content -->
+</section>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="robots" content="noindex">
+        <meta name="googlebot" content="noindex">
+        <meta name="description" content="www root">
+        <meta name="author" content="infy">
+
+        <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="sitename">
+                Home
+            </div>
+            <div class="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <footer>
+                &copy; infy.cybershade.org, [2010, ∞)
+            </footer>
+        </div>
+    </body>
+</html>
