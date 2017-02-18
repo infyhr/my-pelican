@@ -4,7 +4,7 @@
     <section id="content">
         {% for article in articles_page.object_list %}
         <div id="row">
-            <div class="date">{{ article.date.strftime('%b %d') }}</div>
+            <div class="date">{{ article.date.strftime('%b %d \'%y') }}</div>
             <div class="title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></div>
         </div>
         {% endfor %}
@@ -12,15 +12,15 @@
 
     <div class="intro">
         <h1>Pages</h1>
-        <p>To be added.</p>
+        <p>To be added (eventually).</p>
         <!--<h1>Password protected content</h1>
         <p>Some of the content on here may be sensitive, so it's encrypted from everyone's eyes. There are a number of private GitHub repositories as well.<br>
         If you'd like access, ping me on <a href="https://darkscience.net">IRC</a> | <a href="#" onclick="javascript:alert('You probably know who I am if you clicked on this.')">Facebook</a> | <a href="mailto:infy@cybershade.org">E-Mail</a>...<br>
         </p>-->
         <h1>Links</h1>
         <ul>
+            <li><a href="https://www.fesb.unist.hr/">Fakultet elektrotehnike, strojarstva i brodogradnje</a></li>
             <li><a href="https://cybershade.org">Cybershade</a></li>
-            <li><a href="https://darkscience.net">Darkscience</a></li>
             <li><a href="https://darchoods.net">Darchoods</a></li>
             <li><a href="https://carnet.hr">CARNet</a></li>
         </ul>

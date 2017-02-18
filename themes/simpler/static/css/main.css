@@ -35,13 +35,14 @@ a, a:visited {
     color: #27ae60;
     text-decoration: none;
 }
-a:hover {
+a:hover, a:active {
     text-decoration: underline;
+    color: #27ae60;
 }
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1rem;
+    font-size: 1.8rem;
     color: #333;
 }
 
@@ -83,31 +84,15 @@ body {
 }
 #row .date {
     display: flex;
-    flex-shrink: 1;
-    font-size: 1.2rem;
+    font-size: 1.9rem; /* Ako prominiš font size na bodyu ne zaboravi i ovo accordingly prominit. */
     font-weight: bold;
     text-transform: uppercase;
-    width: 9%;
+    flex: 0 0 110px;
 }
 #row .title {
     display: flex;
     flex-grow: 1;
-    align-items: flex-end;
-}
-@media(max-width: 768px) {
-    #row .date {
-        width: 15%;
-    }
-}
-@media(max-width: 576px) {
-    #row .date {
-        width: 25%;
-    }
-}
-@media(min-width: 1200px) {
-    #row .date {
-        width: 7%;
-    }
+    align-items: center;
 }
 li {
     list-style-type: square;
@@ -121,7 +106,7 @@ li {
 .entry-date {
     text-align: center;
     font-weight: bold;
-    font-size: .9rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
     color: #000;
     margin-top: 0;
@@ -136,56 +121,14 @@ footer {
     display: flex;
     justify-content: space-around;
     border-top: 1px solid rgb(211, 211, 211);
-    font-size: .8rem;
+    font-size: 1.2rem;
     text-align: center;
     padding-top: 1%;
 }
 
 /* General markup */
 h1 {
-    font-size: 36px;
-}
-h2 {
-    font-size: 30px;
-}
-h1 {
     color: rgb(153, 153, 153);
-}
-blockquote {
-    padding: 10px 20px;
-    margin: 0 0 20px;
-    font-size: 17.5px;
-    border-left: 5px solid #eee;
-}
-code {
-    padding: .2rem .4rem;
-    font-size: 90%;
-    color: #bd4147;
-    background-color: #f7f7f9;
-    border-radius: .25rem;
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-table {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 20px;
-    table-layout: fixed;
-}
-.table > thead:first-child > tr:first-child > th {
-    border-top: 0;
-}
-.table > thead > tr > th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #ddd;
-}
-th {
-    text-align: left;
-}
-table > tbody > tr > td {
-    padding: .1%;
-    line-height: 1.42857143;
-    vertical-align: top;
-    border-top: 1px solid #ddd;
 }
 
 /* Table of contents */
@@ -194,11 +137,6 @@ table > tbody > tr > td {
 }
 
 /* Syntax highlighting */
-pre {
-    font-size: .9rem;
-    padding: 10px;
-    overflow: scroll;
-}
 .highlight pre .hll { background-color: #2f2f2f }
 .highlight pre, .highlighttable pre { background: #3f3f3f; color: #dcdccc }
 .highlight pre .c { color: #7f9f7f } /* Comment */
